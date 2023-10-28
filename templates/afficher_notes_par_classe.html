@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    </br></br></br>
+    <h1>Notes de la classe {{ classe.nom }}</h1>
+    <ul>
+        {% for eleve in eleves %}
+            <li>{{ eleve.nom }}:
+                <ul>
+                    {% for note in eleve.note_set.all %}
+                        <li>{{ note.matiere.nom }} - Note : {{ note.note }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

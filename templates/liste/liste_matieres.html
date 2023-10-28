@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+</br></br></br></br>
+   <center> <h1>Liste des Matières</h1></center>
+    <ul class="list-group">
+        {% for matiere in matieres %}
+            <li class="list-group-item">
+                <a href="{% url 'detail_matiere' matiere.id %}">{{ matiere.nom }}</a>
+            </li>
+        {% empty %}
+            <li class="list-group-item">Aucune matière disponible.</li>
+        {% endfor %}
+    </ul>
+</div>
+  {% endblock  %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <h1>Liste des Bulletins</h1>
+    <ul>
+        {% for bulletin in bulletins %}
+            <li>
+                <a href="{% url 'detail_bulletin' bulletin.id %}">{{ bulletin.eleve.nom }} - {{ bulletin.annee_scolaire.debut_annee }}/{{ bulletin.annee_scolaire.fin_annee }}</a>
+            </li>
+        {% empty %}
+            <li>Aucun bulletin disponible.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

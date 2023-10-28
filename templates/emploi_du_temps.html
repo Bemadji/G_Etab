@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    </br></br></br>
+    <div class="container">
+        <div class="py-4 text-center">
+            <h1 class="display-4">Emploi du Temps</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-10 offset-1">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">Jour</th>
+                                <th scope="col">Heures</th>
+                                <th scope="col">Matière</th>
+                                <th scope="col">Enseignant</th>
+                                <th scope="col">Classe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for emploi in emploi_du_temps %}
+                                <tr>
+                                    <td>{{ emploi.jour }}</td>
+                                    <td>De {{ emploi.heure_debut|time:"H:i" }} à {{ emploi.heure_fin|time:"H:i" }}</td>
+                                    <td>{{ emploi.matiere }}</td>
+                                    <td>{{ emploi.enseignant }}</td>
+                                    <td>Classe: {{ emploi.classe }}</td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="5" class="text-center">Aucun emploi du temps disponible.</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</br></br></br>
+{% endblock %}

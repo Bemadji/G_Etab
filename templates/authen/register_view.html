@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+</br></br></br></br>
+<div class="container vh-80">
+    <div class="row justify-content-center align-items-center h-80">
+        <div class="col">
+            <div class="card card-registration my-4">
+                <div class="row g-0">
+                    <div class="col-xl-6 d-none d-xl-block">
+                        <img src="{% static 'assets/img/g-etab.png' %}"
+                             alt="Sample photo" class="img-fluid"
+                             style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card-body p-md-5 text-black">
+                            <h3 class="mb-5 text-uppercase">S'inscrire</h3>
+
+                            <!-- Afficher les messages de succès ici -->
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }}">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+
+                            <form method="POST" action="{% url 'register' %}">
+                                {% csrf_token %}
+                                <div class="mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="username" class="form-control form-control-lg" name="username" required>
+                                        <label class="form-label" for="lastName">Nom d'utilisateur</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="firstName" class="form-control form-control-lg" name="first_name" />
+                                        <label class="form-label" for="firstName">Prénom</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="lastName" class="form-control form-control-lg" name="last_name" />
+                                        <label class="form-label" for="lastName">Nom</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="form-outline">
+                                        <input type="email" id="email" class="form-control form-control-lg" name="email" />
+                                        <label class="form-label" for="email">E-mail</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="form-outline">
+                                        <input type="password" id="password" class="form-control form-control-lg" name="password1" />
+                                        <label class="form-label" for="password">Mot de passe</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="form-outline">
+                                        <input type="password" id="confirmPassword" class="form-control form-control-lg" name="password2" />
+                                        <label class="form-label" for="confirmPassword">Confirmer le mot de passe</label>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block mb-4">S'inscrire</button>
+                                <div class="text-center">
+                                    <p>Déjà membre? <a href="{% url 'login' %}">Se connecter</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

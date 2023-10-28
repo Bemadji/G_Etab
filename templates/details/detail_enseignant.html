@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+</br></br></br></br>
+<div class="container">
+    <h1>Détails de l'Enseignant</h1>
+
+    {% if enseignant.photo %}
+        <img src="{{ enseignant.photo.url }}" alt="{{ enseignant.nom }} {{ enseignant.prenom }}" class="photo-4x4">
+    {% else %}
+        <p>Aucune photo disponible.</p>
+    {% endif %}
+
+    <p><strong>Matricule:</strong> {{ enseignant.matricule }}</p>
+    <p><strong>Nom:</strong> {{ enseignant.nom }}</p>
+    <p><strong>Prénom:</strong> {{ enseignant.prenom }}</p>
+    <p><strong>Poste:</strong> {{ enseignant.poste }}</p>
+    <p><strong>Type de Poste:</strong> {{ enseignant.get_type_poste_display }}</p>
+    <p><strong>Diplôme:</strong> {{ enseignant.diplome }}</p>
+    <p><strong>Spécialité:</strong> {{ enseignant.specialite }}</p>
+    <p><strong>Classes:</strong>
+        {% for classe in enseignant.classes.all %}
+            {{ classe.nom }}
+            {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+
+    <a class="btn btn-primary" href="{% url 'liste_enseignant' %}">Retour à la liste des enseignants</a>
+</div>
+
+{% endblock %}

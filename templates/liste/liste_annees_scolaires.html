@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+</br></br></br></br>
+    <h1>Liste des Années Scolaires</h1>
+    <ul>
+        {% for annee_scolaire in annees_scolaires %}
+            <li>
+                <a href="{% url 'detail_annee_scolaire' annee_scolaire.id %}">
+                    {{ annee_scolaire.debut_annee|date:"Y" }} - {{ annee_scolaire.fin_annee|date:"Y" }}
+                </a>
+            </li>
+        {% empty %}
+            <li>Aucune année scolaire disponible.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

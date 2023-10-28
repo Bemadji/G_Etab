@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <h1>Détail du Bulletin</h1>
+    <p>Élève : {{ bulletin.eleve.nom }}</p>
+    <p>Année Scolaire : {{ bulletin.annee_scolaire.debut_annee }}/{{ bulletin.annee_scolaire.fin_annee }}</p>
+
+    <h2>Notes par Matière :</h2>
+    <ul>
+        {% for matiere in matieres %}
+            <li>
+                {{ matiere.nom }} : {{ matiere.note }}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

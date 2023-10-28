@@ -1,0 +1,17 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Absences</title>
+</head>
+<body>
+    <h1>Liste des Absences</h1>
+    <ul>
+        {% for absence in absences %}
+            <li>
+                {{ absence.eleves.nom }} ({{ absence.date|date:"d/m/Y" }}): {{ absence.motif }}
+            </li>
+        {% empty %}
+            <li>Aucune absence disponible.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

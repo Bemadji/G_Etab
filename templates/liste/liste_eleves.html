@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+</br></br></br></br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center">Liste des Élèves</h1>
+            <ul class="list-group">
+                {% regroup eleves by classes as eleves_by_classe %}
+
+                {% for classe in eleves_by_classe %}
+                    <li class="list-group-item list-group-item-primary">
+                        <h4>Classe: {{ classe.list.0.classes.nom }}</h4>
+                    </li>
+
+                    {% for eleve in classe.list %}
+                        <li class="list-group-item">
+                            <a href="{% url 'detail_eleve' eleve.id %}">{{ eleve.nom }} {{ eleve.prenom }}</a>
+                        </li>
+                    {% endfor %}
+                {% empty %}
+                    <li class="list-group-item text-center">Aucun élève disponible.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

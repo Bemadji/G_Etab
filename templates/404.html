@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    </br></br></br></br>
+
+	<div id="notfound">
+		<div class="notfound">
+			<div class="notfound-404">
+				<h1>Oops!</h1>
+			</div>
+			<h2>404 - Page non trouvée</h2>
+			<p>La page que vous recherchez a peut-être été supprimée, son nom a changé ou est temporairement indisponible.</p>
+			<a href="{% url 'accueil' %}">Retour au page d'accueil</a>
+		</div>
+	</div>
+{% endblock  %}

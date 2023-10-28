@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <title>Évaluations</title>
+
+    {% block content %}
+    <h1>Gestion des Évaluations</h1>
+    <ul>
+        <li><a href="{% url 'liste_evaluations' %}">Liste des Évaluations</a></li>
+        <li><a href="{% url 'detail_evaluation' %}">Détail de l'Évaluation</a></li>
+    </ul>
+    {% endblock %}

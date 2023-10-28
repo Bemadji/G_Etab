@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    </br></br></br></br>
+    <div class="container">
+        <h1>Année Scolaire</h1>
+        <ul>
+            <li><strong>Début de l'année :</strong> {{ annee_scolaire.debut_annee }}</li>
+            <li><strong>Fin de l'année :</strong> {{ annee_scolaire.fin_annee }}</li>
+            <li><strong>Cycles :</strong>
+                {% if annee_scolaire.cycles.exists %}
+                    <ul>
+                        {% for cycle in annee_scolaire.cycles.all %}
+                            <li>{{ cycle.nom }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>Aucun cycle associé à cette année scolaire.</p>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+    <a class="btn btn-primary" href="{% url 'liste_annees_scolaires' %}" >Retour à la liste des années scolaires</a>
+{% endblock %}
+

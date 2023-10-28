@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    </br></br></br></br>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Déconnexion</h3>
+                        <p class="card-text">Vous avez été déconnecté de votre compte.</p>
+                        <a href="{% url 'login' %}" class="btn btn-primary">Revenir à la page de connexion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <h1>Formulaire d'inscription</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Vous pouvez utiliser as_table, as_ul, ou personnaliser la mise en page comme vous le souhaitez -->
+        <button type="submit">S'inscrire</button>
+    </form>
+    
+{% endblock %}

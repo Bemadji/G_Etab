@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    </br></br></br></br>
+    <h1>Liste des Notes</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom de l'Élève</th>
+                <th>Matière</th>
+                <th>Note</th>
+                <th>Classe</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for note in notes %}
+                <tr>
+                    <td>{{ note.eleve.prenom }} {{ note.eleve.nom }}</td>
+                    <td>{{ note.matiere.nom }}</td>
+                    <td>{{ note.note }}</td>
+                    <td>{{ note.eleve.classes.nom }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">Aucune note disponible.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

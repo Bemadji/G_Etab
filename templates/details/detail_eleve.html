@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+</br></br></br></br>
+<div class="student-card">
+    <h1>Détail de l'Élève</h1>
+    <div class="card-content">
+        {% if eleve.photo %}
+            <img src="{{ eleve.photo.url }}" alt="{{ eleve.nom }} {{ eleve.prenom }}" class="photo-4x4">
+        {% else %}
+            <p>Aucune photo disponible.</p>
+        {% endif %}
+        <p><strong>Nom:</strong> {{ eleve.nom }}</p>
+        <p><strong>Prénom:</strong> {{ eleve.prenom }}</p>
+        <p><strong>Date de naissance:</strong> {{ eleve.date_naissance }}</p>
+        <p><strong>Lieu de naissance:</strong> {{ eleve.lieu_naissance }}</p>
+        <p><strong>Matricule:</strong> {{ eleve.matricule }}</p>
+        <p><strong>Statut:</strong> {{ eleve.status }}</p>
+        <p><strong>Classes:</strong> 
+            {% for classe in eleve.classes.all %}
+                {{ classe.nom }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+        <!-- Afficher les informations des parents -->
+        <h2>Informations des Parents</h2>
+        {% for parent in eleve.parent_set.all %}
+            <p><strong>Nom du Père:</strong> {{ parent.nom_pere }}</p>
+            <p><strong>Nom de la Mère:</strong> {{ parent.nom_mere }}</p>
+            <p><strong>Téléphone 1:</strong> {{ parent.phone_number1 }}</p>
+            <p><strong>Téléphone 2:</strong> {{ parent.phone_number2 }}</p>
+            <p><strong>Adresse:</strong> {{ parent.adresse }}</p>
+            <br>
+        {% endfor %}
+
+    </div>
+    <a class="btn btn-primary" href="{% url 'liste_eleves' %}" >Retour à la liste des élèves</a>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+</br></br></br></br>
+<div class="container">
+    <h1>Liste des Enseignants</h1>
+
+    <ul class="list-group">
+        {% for enseignant in enseignants %}
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <a href="{% url 'detail_enseignant' enseignant.id %}">{{ enseignant.nom }} {{ enseignant.prenom }}</a>
+                    </div>
+                    <span class="badge bg-primary">{{ enseignant.specialite }}</span>
+                </div>
+            </li>
+        {% empty %}
+            <li class="list-group-item">Aucun enseignant disponible.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

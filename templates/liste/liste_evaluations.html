@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    </br></br></br></br>
+    <center><h1>Liste des Évaluations</h1></center>
+    <div class="container">
+        <ul class="list-group">
+            {% for evaluation in evaluations %}
+                <li class="list-group-item">
+                    <a href="{% url 'detail_evaluation' evaluation.id %}">{{ evaluation.type_d_evaluation }}</a>
+                </li>
+            {% empty %}
+                <li class="list-group-item">Aucune évaluation disponible.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endblock  %}
+

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    </br></br></br>
+    <h1>Ajouter une note pour {{ eleve.nom }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ajouter la note</button>
+    </form>
+    <a href="{% url 'afficher_notes_par_classe' eleve.classe.id %}">Retour à la liste des notes de la classe</a>
+    
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    </br></br></br></br>
+    <center><h1>Détail de l'Évaluation</h1></center>
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Type d'Évaluation:</strong> {{ evaluation.type_d_evaluation }}</li>
+            <li class="list-group-item"><strong>Classe:</strong> {{ evaluation.classe }}</li>
+            <li class="list-group-item"><strong>Matière:</strong> {{ evaluation.matiere }}</li>
+            <li class="list-group-item"><strong>Note:</strong> {{ evaluation.note }}</li>
+        </ul>
+        <a class="btn btn-primary" href="{% url 'liste_evaluations' %}">Retour à la liste des évaluations</a>
+    </div>
+    {% endblock  %}

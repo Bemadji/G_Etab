@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+ <section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Avec G-ETAB, Apprendre aujourd'hui,<br>Diriger demain</h1>
+      <h2>Bienvenue sur G-ETAB, la plateforme de gestion scolaire qui simplifie la vie des établissements scolaires au Tchad.</h2>
+      <a href="{% url 'register' %}" class="btn-get-started">S'inscrire</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="{% static 'assets/img/g-etab.png' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>G-ETAB : La solution numérique pour une éducation de qualité au Tchad.</h3>
+            <p class="fst-italic">
+              G-ETAB est un outil précieux pour les établissements scolaires au Tchad. 
+              Elle permet d'améliorer la communication et la collaboration entre les différents acteurs de la communauté éducative. 
+              Elle contribue également à améliorer la qualité de l'éducation au Tchad.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> G-ETAB : L'éducation au Tchad, c'est notre priorité.</li>
+              <li><i class="bi bi-check-circle"></i> G-ETAB : La technologie au service de l'éducation.</li>
+              <li><i class="bi bi-check-circle"></i> G-ETAB : L'école du futur, aujourd'hui.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts section-bg">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Eleves</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Cours</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Evaluations</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Matieres</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="content">
+              <h3>Pourquoi choisir G-ETAB?</h3>
+              <p>
+                <li> Pour les élèves :</li>
+                <p>G-ETAB : Ma scolarité, à portée de main.<br>G-ETAB : Je suis mieux informé, je réussis mieu</p>
+                <li> Pour les enseignants :</li>
+                <p>G-ETAB : Une gestion simplifiée, pour une pédagogie plus efficace.<br>G-ETAB : Je suis plus organisé, je suis plus productif.</p>
+                <li> Pour les parents d'élèves :</li>
+                <p>G-ETAB : Je suis au courant de la scolarité de mon enfant.<br>G-ETAB : Je participe à l'éducation de mon enfant.</p>
+              </p>
+              <div class="text-center">
+                <a href="{% url 'about_page' %}" class="more-btn">Savoir plus <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Toujours ensemble</h4>
+                    <p>"Restez connecté avec tes enseignants et tes camarades de classe, même à distance, 
+                      grâce à des outils de communication et de collaboration en ligne."
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Être productif.</h4>
+                    <p>
+                      Créez des cours personnalisés et interactifs, adaptés à vos élèves, 
+                      grâce à un large choix de fonctionnalités et d'outils pédagogiques.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>La meilleure plateforme</h4>
+                    <p>Suivez la scolarité de votre enfant en toute simplicité, grâce à un suivi des notes, des absences et des progrès scolaires.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Popular Courses Section ======= -->
+    <section id="popular-courses" class="courses">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Cours</h2>
+          <p>Nos Cours</p>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="course-item">
+              <img src="{% static 'assets/img/maths.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Mathématiques</h4>
+                </div>
+
+                <h3><a href="{% url 'liste_matieres' %}">Les mathématiques sont une langue universelle</a></h3>
+                <p>Elles sont utilisées dans tous les domaines de la science, de la technologie, de l'ingénierie et des mathématiques. 
+                  En apprenant les mathématiques, les élèves acquièrent les compétences nécessaires pour comprendre et résoudre des problèmes dans ces domaines.
+                </p>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/fr.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Français</h4>
+                </div>
+
+                <h3><a href="{% url 'liste_matieres' %}">La culture littéraire et linguistique</a></h3>
+                <p>L'enseignement du français est essentiel pour la réussite des élèves dans leur scolarité et dans leur vie future. 
+                  Il leur permet de communiquer efficacement avec les autres, de comprendre le monde qui les entoure et de participer à la société.
+                </p>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="course-item">
+              <img src="{% static 'assets/img/bio.jpg' %}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4>Biologie</h4>
+                </div>
+
+                <h3><a href="{% url 'liste_matieres' %}">La biologie est la science de la vie.</a></h3>
+                <p>La biologie est une science fondamentale. Elle est à la base de nombreuses autres disciplines scientifiques, telles que la médecine, l'agriculture et l'environnement. 
+                  En apprenant la biologie, nous acquiérons des connaissances qui nous seront utiles dans de nombreux domaines.
+                </p>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+        </div>
+
+      </div>
+    </section><!-- End Popular Courses Section -->
+
+  </main><!-- End #main -->
+  {% endblock  %}

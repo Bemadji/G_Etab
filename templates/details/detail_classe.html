@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    </br></br></br></br>
+    <center><h1>Détails de la Classe</h1></center>
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Nom de la Classe:</strong> {{ classe.nom }}</li>
+            <li class="list-group-item"><strong>Description:</strong> {{ classe.description }}</li>
+            <li class="list-group-item"><strong>Le nombre d'élèves est de :</strong> {{ nombre_eleves }}</li>
+        </ul>
+        <a class="btn btn-primary mt-3" href="{% url 'liste_classes' %}">Retour à la liste des classes</a>
+    </div>
+{% endblock  %}
+    </br></br>
